@@ -26,7 +26,7 @@ def get_elements(element_id: int) -> List[Element]:
     try:
         connection = sqlite3.connect('elements.db')
         cursor = connection.cursor()
-        cursor.execute('SELECT * FROM Elements WHERE AtomicNumber = ?;', (element_id,))
+        cursor.execute('SELECT * FROM Elements WHERE NumeroAtomico = ?;', (element_id,))
         results = cursor.fetchall()
         elements = []
         for row in results:
